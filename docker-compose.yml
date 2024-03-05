@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+
+  mysql:
+    container_name: mysql_container
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: berlin
+      MYSQL_ROOT_PASSWORD: prisma
+    volumes:
+      - mysql-db:/var/lib/mysql
+  
+  nextjs:
+      container_name: nextjs_container
+      build: .
+      ports:
+        - '3000:3000'
+      restart: always
+      environment:
+        - DATABASE_URL=mysql://root:prisma@mysql:3306/berlin
+volumes:
+  mysql-db:
+
+
