@@ -1,4 +1,4 @@
-## How to try the web scrapper on your local machine.
+## How to run the web scrapper on your local machine.
 
 1. git clone https://github.com/sergiusergiu1234/web-scrapper.git
 
