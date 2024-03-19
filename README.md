@@ -2,7 +2,7 @@
 
 1. git clone https://github.com/sergiusergiu1234/web-scrapper.git
 
-2. cd scrapper
+2. cd web-scrapper
 
 3. Install docker on machine.
 
