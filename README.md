@@ -6,7 +6,7 @@
 
 3. Install docker on machine.
 
-4. docker-compose up --buid -d
+4. docker-compose up --build -d
 
 In docker terminal...
 
