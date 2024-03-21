@@ -55,7 +55,7 @@ export async function scrapeData() {
           let categories: string[] = [];
           //find categories of the current exhibitor and create them in database if they dont exist
           try {
-            page.waitForSelector(".jss141" || ".jss142" || ".jss143");
+           page.waitForSelector(".MuiGrid-root .MuiListItem-container");
             try {
               await page.waitForSelector(".MuiGrid-root .MuiListItem-container");
               const gridContainer = await page.$(".MuiGrid-root .MuiGrid-item");
@@ -170,13 +170,13 @@ export async function scrapeData() {
             console.log("error happened inside page", err);
           }
 
-          // // Go back to the exhibitors page
+          // Go back to the exhibitors page
           await Promise.all([
             page.waitForNavigation(),
             page.goto("https://ecommerceberlin.com/exhibitors"),
           ]);
 
-          //wait until page fully loads
+          //  wait until page fully loads
           await page.waitForSelector(".MuiGrid-root .MuiListItem-container");
           // Update the list of exhibitor handles
           exhibitorHandles = await page.$$(
